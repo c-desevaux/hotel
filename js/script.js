@@ -53,10 +53,11 @@ let hotel = [];
         p.textContent = "Caractéristiques de la chambre numéro "+numChambre+":\n "+hotel[numChambre-1].getCaracteristics();
         p.style.whiteSpace = "pre-line";
         container.appendChild(p);
-        let btnLiberer = document.getElementById("btn-liberer");
-        btnLiberer.classList.remove("d-none");
+
+        let btnLiberer = document.getElementById("btn-liberer");        //On récupère le bouton dans le DOM
+        btnLiberer.classList.remove("d-none");                          //On enlève la classe d-none pour afficher le bouton
         btnLiberer.onclick = function(){
-            if(hotel[numChambre-1].getReservation() === false){
+            if(hotel[numChambre-1].getReservation() === false){         //On vérifie que la chambre est occupée
                 hotel[numChambre-1].libererChambre();
                 container.innerHTML = "";
                 p.textContent = "Caractéristiques de la chambre numéro "+numChambre+":\n "+hotel[numChambre-1].getCaracteristics();
@@ -65,7 +66,7 @@ let hotel = [];
         }                             //On appelle la fonction d'affichage des caractéristiques de la chambre
 
 
-        let btnResa = document.getElementById("btn-reserver");
+        let btnResa = document.getElementById("btn-reserver");          //On récupère le bouton dans le DOM
         btnResa.classList.remove("d-none");
         btnResa.onclick = function(){
             if(hotel[numChambre-1].getReservation() === true){
@@ -76,9 +77,23 @@ let hotel = [];
         container.appendChild(p);      
         }                             //On appelle la fonction d'affichage des caractéristiques de la chambre    
     });
+    let btnDisplayAll = document.getElementById("btn-display-all");
 
+    btnDisplayAll.onclick = function() {
+        let tabContainer = document.getElementById("tab-container");
+        let tab = document.getElementById("tab");
+        tabContainer.innerHTML = "";
+        tab.style.whiteSpace = "pre-line";
+        tab.textContent=`Ensemble des chambres: 
 
-    displayFreeRoom();
+            ${hotel.map((chambre, index) => {
+            return `Chambre ${index+1}:   ${chambre.getCaracteristics()}`;
+        }).join("\n")}`;
+
+        tabContainer.appendChild(tab);
+    }
+
+    
 
     //-------------------------------------------------------LES FONCTIONS-------------------------------------------------------------
 
