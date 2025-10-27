@@ -1,4 +1,4 @@
-    import { Chambre } from "./Chambre.js";
+    import { Chambre } from "./Chambre.js";                     //Import de la classe chambre
 
     let hotel = [];
 
@@ -14,7 +14,7 @@
         hotel[i]= new Chambre(superficie, capacitee, resa);     //on stock les chambre dans un tableau hotel
     }
 
-    freeRoom();                                                 //On appel la fonction qui affiche les chambre libre
+    displayFreeRoom();                                                 //On appel la fonction qui affiche les chambre libre
 
 
     //-------------------------------------------------------LES FONCTIONS-------------------------------------------------------------
@@ -23,13 +23,12 @@
     /**
      *
      */
-    function freeRoom(){
+    function displayFreeRoom(){
 
         for (let i=0 ; i<hotel.length ; i++){               //On parcours le tableau puis on regarde que vaut la valeur reservaiton de notre objet
-console.log(hotel[i]);
-console.log(hotel[i].getReservation())
-            if(hotel[i].getReservation() === true){         //Si la chmabre est libre on l'affiche
-                console.log("Chambre "+(i+1)+" est libre: "+hotel[i]);
+
+            if(hotel[i].getReservation() === true){         //Si la chambre est libre on l'affiche
+                console.log("Chambre "+(i+1)+" est libre: "+hotel[i].getCaracteristics());
             }
         }
     }

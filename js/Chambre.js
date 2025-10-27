@@ -27,7 +27,7 @@ export class Chambre{                               //Export pour rendre la clas
         this.#reservation=reservation;
     }
 
-    getSuperficie(){                                   //foncitons get qui permettent de recuprer les valeurs des differents parametres de chambre
+    getSuperficie(){                                   //Foncitons get qui permettent de recuprer les valeurs des differents parametres de chambre
         return this.#superficie;
     }
 
@@ -37,6 +37,11 @@ export class Chambre{                               //Export pour rendre la clas
 
     getReservation(){
         return this.#reservation;
+    }
+
+    getCaracteristics(){                                   //Fonction permettant de renvoyer un tableau mentionnant l'ensemble des caracterisques
+        let caracteristics = ["Superficie: "+this.#superficie, " Capacitée: "+this.#capacitee, " Capacitée: "+this.#capacitee];
+        return caracteristics;
     }
 
 
@@ -49,8 +54,13 @@ export class Chambre{                               //Export pour rendre la clas
         
     }
 
-    libererChambre(){                                   //Fonction permettant de changer de status de la chambre en libre
-        this.setReservation(true);
+    libererChambre(){                                    //Fonction permettant de changer de status de la chambre en libre
+        if(this.#reservation === false){
+            this.setReservation(true);
+        }else{
+            console.log("La chambre est déjà libre");
+        }
+   
     }
 
 }
