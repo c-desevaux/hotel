@@ -1,3 +1,5 @@
+    "use-strict";
+
     import { Chambre } from "./Chambre.js";                     //Import de la classe chambre
 
 
@@ -38,8 +40,21 @@ let hotel = [];
 
     }
 
-    displayFreeRoom();                                                 //On appel la fonction qui affiche les chambre libre
+    let btnOk = document.getElementById("btn-valider");               //On récupère le bouton dans le DOM
 
+    btnOk.addEventListener("click", () => {
+        let select = document.getElementById("searchRoom");   //On récupère la valeur entrée dans le champ input
+        let numChambre = select.value;
+        let container = document.getElementById("display-room");
+        let p = document.createElement("p");
+        container.innerHTML = "";                                   //On vide le conteneur à chaque clic
+        p.textContent = "Caractéristiques de la chambre numéro "+numChambre+":\n "+hotel[numChambre-1].getCaracteristics();
+        p.style.whiteSpace = "pre-line";
+        container.appendChild(p);
+        displayRoom(numChambre);                                     //On appelle la fonction d'affichage des caractéristiques de la chambre    
+    });  
+
+    displayFreeRoom();
 
     //-------------------------------------------------------LES FONCTIONS-------------------------------------------------------------
 
@@ -56,6 +71,10 @@ let hotel = [];
             }
             
         }
+    }
+
+    function displayRoom(numeroChambre){
+        console.log("Caractéristiques de la chambre numéro "+numeroChambre+": "+hotel[numeroChambre-1].getCaracteristics());
     }
 
 

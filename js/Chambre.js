@@ -52,8 +52,14 @@ export class Chambre{                               //Export pour rendre la clas
         return this.#reservation;
     }
 
-    getCaracteristics(){                                   //Fonction permettant de renvoyer un tableau mentionnant l'ensemble des caracterisques
-        let caracteristics = ["Superficie: "+this.#superficie, " Capacitée: "+this.#capacitee, " Capacitée: "+this.#capacitee];
+    getCaracteristics(){    
+        let status;
+        if(this.#reservation ===true){
+            status = "Libre";
+        }else{
+            status = "Occupée";
+        }                               //Fonction permettant de renvoyer un tableau mentionnant l'ensemble des caracterisques
+        let caracteristics = ["Superficie: "+this.#superficie, " Capacitée: "+this.#capacitee, " Status: "+status];
         return caracteristics;
     }
 
