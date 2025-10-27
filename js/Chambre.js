@@ -27,5 +27,25 @@ export class Chambre{                               //Export pour rendre la clas
         this.#reservation=reservation;
     }
 
+    getSuperficie(){                                   //foncitons get qui permettent de recuprer les valeurs des differents parametres de chambre
+        return this.#superficie;
+    }
+
+    getCapacitee(){
+        return this.#capacitee;
+    }
+
+    getReservation(){
+        return this.#reservation;
+    }
+
+
+    reserverChambre(){
+        this.setReservation("occupee");
+    }
+
+    libererChambre(){
+        this.setReservation("libre");
+    }
 
 }
