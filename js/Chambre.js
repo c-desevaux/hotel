@@ -10,6 +10,8 @@ export class Chambre{                               //Export pour rendre la clas
 
     constructor(superficie, capacitee, reservation){ //Constructeur qui permet de creer des instance de chambre
 
+        
+
         this.setSuperficie(superficie);                //On appel chaque seteur du constructeur avec les valeurs donnée en parametre
         this.setCapacitee(capacitee);
         this.setReservation(reservation);
@@ -17,7 +19,11 @@ export class Chambre{                               //Export pour rendre la clas
     }
 
     setSuperficie(superficie){                          //Défini la superficie de la chambre
-            this.#superficie=superficie;
+
+        if(superficie == undefined){ new Error ("Champs superficie obligatoire")} //Erreur si superficie non défini
+        if(isNaN(superficie)){ throw Error ("La superficie doit etre un nombre")}   //Erreur si superficie n'est pas un nombre
+        if(superficie<0){ throw Error ("La superficie doit est un nombre positif")} //Erreur si superficie n'est pas positif
+        else{this.#superficie=superficie};
     }
     setCapacitee(capacitee){                            //Défini la capacitée de la chambre
         this.#capacitee=capacitee;

@@ -12,7 +12,10 @@
             resa = false;
         }
         hotel[i]= new Chambre(superficie, capacitee, resa);     //on stock les chambre dans un tableau hotel
+
     }
+let chambreX = new Chambre(12, 2, true);
+console.log(chambreX);
 
     displayFreeRoom();                                                 //On appel la fonction qui affiche les chambre libre
 
