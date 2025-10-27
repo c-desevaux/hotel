@@ -1,5 +1,25 @@
     import { Chambre } from "./Chambre.js";                     //Import de la classe chambre
 
+
+//-------------------------------------------------------------LES TESTS----------------------------------------------------------------
+
+    try{
+
+        // let test1 = new Chambre();
+        // let test2 = new Chambre("a", 1, true);
+        // let test3 = new Chambre(-1, 1, true);
+        // let test4 = new Chambre(1, "a", true);
+        // let test5 = new Chambre(1, -1, true);
+        // let test6 = new Chambre(1, 1, 0);
+        // let test7 = new Chambre(1, 1, "a");
+        // let test8 = new Chambre(1, 1);
+        //let test9 = new Chambre(1);
+
+        
+    }catch(e){
+        console.log("une erreur s'est produite : ",e.message);
+    }
+
     let hotel = [];
 
     for(let i=0 ; i<10 ; i++){                                  //Boucle for créant aléatoirement 10 chambre
@@ -11,11 +31,10 @@
         }else{
             resa = false;
         }
-        hotel[i]= new Chambre(superficie, capacitee, resa);     //on stock les chambre dans un tableau hotel
+
+        hotel[i]= new Chambre(superficie, capacitee, resa);     //on stock les chambres dans un tableau hotel
 
     }
-let chambreX = new Chambre(12, 2, true);
-console.log(chambreX);
 
     displayFreeRoom();                                                 //On appel la fonction qui affiche les chambre libre
 
@@ -33,7 +52,9 @@ console.log(chambreX);
             if(hotel[i].getReservation() === true){         //Si la chambre est libre on l'affiche
                 console.log("Chambre "+(i+1)+" est libre: "+hotel[i].getCaracteristics());
             }
+            
         }
     }
+
 
 console.log(hotel);
