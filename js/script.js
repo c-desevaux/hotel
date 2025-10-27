@@ -13,14 +13,16 @@
         // let test6 = new Chambre(1, 1, 0);
         // let test7 = new Chambre(1, 1, "a");
         // let test8 = new Chambre(1, 1);
-        //let test9 = new Chambre(1);
+        // let test9 = new Chambre(1);
 
         
     }catch(e){
         console.log("une erreur s'est produite : ",e.message);
     }
 
-    let hotel = [];
+//---------------------------------------------------------PROGRAMME PRINCIPALE----------------------------------------------------------
+    
+let hotel = [];
 
     for(let i=0 ; i<10 ; i++){                                  //Boucle for créant aléatoirement 10 chambre
         let superficie = Math.floor(Math.random()*20)+10;
