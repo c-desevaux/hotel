@@ -40,12 +40,17 @@ export class Chambre{                               //Export pour rendre la clas
     }
 
 
-    reserverChambre(){
-        this.setReservation("occupee");
+    reserverChambre(){                                  //Fonciton permettant de changer le status de la chambre en occupée
+        if(this.#reservation===true){
+            this.setReservation(false);
+        }else{
+            console.log("La chambre est déjà occupée");
+        }
+        
     }
 
-    libererChambre(){
-        this.setReservation("libre");
+    libererChambre(){                                   //Fonction permettant de changer de status de la chambre en libre
+        this.setReservation(true);
     }
 
 }
