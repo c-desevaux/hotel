@@ -43,16 +43,40 @@ let hotel = [];
     let btnOk = document.getElementById("btn-valider");               //On récupère le bouton dans le DOM
 
     btnOk.addEventListener("click", () => {
+
         let select = document.getElementById("searchRoom");   //On récupère la valeur entrée dans le champ input
         let numChambre = select.value;
         let container = document.getElementById("display-room");
         let p = document.createElement("p");
+
         container.innerHTML = "";                                   //On vide le conteneur à chaque clic
         p.textContent = "Caractéristiques de la chambre numéro "+numChambre+":\n "+hotel[numChambre-1].getCaracteristics();
         p.style.whiteSpace = "pre-line";
         container.appendChild(p);
-        displayRoom(numChambre);                                     //On appelle la fonction d'affichage des caractéristiques de la chambre    
-    });  
+        let btnLiberer = document.getElementById("btn-liberer");
+        btnLiberer.classList.remove("d-none");
+        btnLiberer.onclick = function(){
+            if(hotel[numChambre-1].getReservation() === false){
+                hotel[numChambre-1].libererChambre();
+                container.innerHTML = "";
+                p.textContent = "Caractéristiques de la chambre numéro "+numChambre+":\n "+hotel[numChambre-1].getCaracteristics();
+            }
+        container.appendChild(p);      
+        }                             //On appelle la fonction d'affichage des caractéristiques de la chambre
+
+
+        let btnResa = document.getElementById("btn-reserver");
+        btnResa.classList.remove("d-none");
+        btnResa.onclick = function(){
+            if(hotel[numChambre-1].getReservation() === true){
+                hotel[numChambre-1].reserverChambre();
+                container.innerHTML = "";                                  //On vide le conteneur à chaque clic
+                p.textContent = "Caractéristiques de la chambre numéro "+numChambre+":\n "+hotel[numChambre-1].getCaracteristics();
+            }
+        container.appendChild(p);      
+        }                             //On appelle la fonction d'affichage des caractéristiques de la chambre    
+    });
+
 
     displayFreeRoom();
 
