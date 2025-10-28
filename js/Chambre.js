@@ -20,22 +20,22 @@ export class Chambre{                               //Export pour rendre la clas
 
     #setSuperficie(superficie){                          //Défini la superficie de la chambre
 
-        if(superficie == undefined){ new Error ("ERR : Champs superficie obligatoire")} //Erreur si superficie non défini
+        if(superficie == undefined){ throw new Error ("ERR : Champs superficie obligatoire")} //Erreur si superficie non défini
         if(isNaN(superficie)){ throw Error ("ERR : La superficie doit etre un nombre")}   //Erreur si superficie n'est pas un nombre
-        if(superficie<0){ throw Error ("ERR : La superficie doit est un nombre positif")} //Erreur si superficie n'est pas positif
+        if(superficie<=0){ throw Error ("ERR : La superficie doit est un nombre positif")} //Erreur si superficie n'est pas positif
         else{this.#superficie=superficie};
 
     }
 
     #setCapacitee(capacitee){                            //Défini la capacitée de la chambre
-        if(capacitee == undefined){ new Error ("ERR : Champs capacitee obligatoire")} //Erreur si capacitee non défini
+        if(capacitee == undefined){ throw new Error ("ERR : Champs capacitee obligatoire")} //Erreur si capacitee non défini
         if(isNaN(capacitee)){ throw Error ("ERR : La capacitee doit etre un nombre")}   //Erreur si capacitee n'est pas un nombre
-        if(capacitee<0){ throw Error ("ERR : La capacitee doit est un nombre positif")} //Erreur si capacitee n'est pas positif
+        if(capacitee<=0){ throw Error ("ERR : La capacitee doit est un nombre positif")} //Erreur si capacitee n'est pas positif
         else{this.#capacitee=capacitee};
     }
 
     #setReservation(reservation){                        //Défini le status de la chambre (reservée ou libre)
-        if(reservation == undefined){ new Error ("ERR : Champs reservation obligatoire")} //Erreur si reservation non défini
+        if(reservation == undefined){ throw new Error ("ERR : Champs reservation obligatoire")} //Erreur si reservation non défini
         if(reservation!=true && reservation != false){ throw Error ("ERR : La reservation doit etre un boolean")}   //Erreur si reservation n'est pas un boolean
         else{this.#reservation=reservation};
     }

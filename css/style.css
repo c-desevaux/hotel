@@ -1,0 +1,15 @@
+body{
+    background-color: rgb(73, 73, 105);
+}
+
+
+.corp{
+    margin-top: 20px;
+    justify-self: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    background-color: #fcdfbab6;
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    width: 70%;
+    height: 80%;
+}

@@ -1,4 +1,4 @@
-    "use-strict";
+    "use strict";
 
     import { Chambre } from "./Chambre.js";                     //Import de la classe chambre
 
@@ -19,7 +19,7 @@
 
         
     }catch(e){
-        console.log("une erreur s'est produite : ",e.message);
+        console.error("une erreur s'est produite : ",e.message);
     }
 
 //---------------------------------------------------------PROGRAMME PRINCIPALE----------------------------------------------------------
