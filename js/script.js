@@ -16,12 +16,15 @@
         // let test7 = new Chambre(1, 1, "a");
         // let test8 = new Chambre(1, 1);
         // let test9 = new Chambre(1);
-
+                                                             //tests de la class employe
+        //let test10 = new Employe();
+        //let test11 = new Employe("a", 1800, "a", "a");
         
     }catch(e){
         console.error("une erreur s'est produite : ",e.message);
     }
 
+                                                                
 //---------------------------------------------------------PROGRAMME PRINCIPALE----------------------------------------------------------
     
 let hotel = [];
@@ -43,7 +46,7 @@ let hotel = [];
     let paul = new Employe ("Durand", "Paul", "Housekeeping", 2800);
     let pierre = new Employe ("Dupont", "Pierre", "Housekeeping", 1800, paul);
     
-    console.log("Le chef de Pierre est "+paul.getPrenom()+" "+paul.getNom()+", Pierre gagne "+pierre.getSalaire());
+    console.log("Le chef de Pierre est "+pierre.getResponsable().getPrenom()+" "+pierre.getResponsable().getNom()+", Pierre gagne "+pierre.getSalaire()+"€");
 
 
 

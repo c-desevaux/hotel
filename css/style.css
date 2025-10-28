@@ -1,5 +1,13 @@
 body{
-    background-color: rgb(73, 73, 105);
+    height: 100vh;
+    background: linear-gradient(135deg,
+    #ff8a00 0%,
+    #ff6a30 25%,
+    #ff5090 50%,
+    #e52e71 75%,
+    #d0006f 100%);
+    position: relative;
+    overflow: hidden;
 }
 
 
@@ -7,9 +15,29 @@ body{
     margin-top: 20px;
     justify-self: center;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    background-color: #fcdfbab6;
+    filter: brightness(1.1);
     backdrop-filter: blur(10px);
     border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
     width: 70%;
     height: 80%;
+}
+
+.glass-btn{
+    border-radius: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background: none;
+    filter: brightness(1.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    font-weight: 700;
+}
+
+.glass-btn:hover{
+
+    background: hwb(328 0% 57% / 0.479);
+    color: white;
+    filter: brightness(1.3);
 }

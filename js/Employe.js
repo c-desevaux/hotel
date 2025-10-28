@@ -20,12 +20,17 @@
 
         }
 // ---------------------------------------------------------------SETTER-------------------------------------------------------------------
+        
         #setNom(nom){
-                this.#nom=nom;
+            if(nom == undefined){ throw new Error ("ERR : nom est un champs obligatoire")           //Erreur si nom est vide
+            }else{this.#nom=nom};
+                
         }
 
         #setPrenom(prenom){
-            this.#prenom=prenom;
+            if(prenom == undefined){ throw new Error ("ERR : nom est un champs obligatoire")        //Erreur si prénom est vide
+            }else{this.#prenom=prenom};
+           
         }
 
         #setBranche(branche){
@@ -33,15 +38,15 @@
         }
 
         #setSalaire(salaire){
-            if(salaire == undefined){ throw new Error ("ERR : salaire est un champs obligatoire")};
-            if(salaire<=0){ throw new Error ("ERR : salaire doit un nombre positif")
+            if(salaire == undefined){ throw new Error ("ERR : salaire est un champs obligatoire")}; //Erreur si salaire est vide
+            if(salaire<=0){ throw new Error ("ERR : salaire doit un nombre positif")                //Erreur si salaire n'est pas strictement positif
             }else{this.#salaire=salaire};
         }
 
         setResponsable(responsable){
             this.#responsable=responsable;
-
         }
+
 // -------------------------------------------------------------GETTERS-------------------------------------------------------------------
         
         getNom(){
@@ -60,12 +65,14 @@
             return this.#salaire;
         }
 
+        getResponsable(){
+            return this.#responsable;
+        }
+
 // ------------------------------------------------------------BEHAVIORS----------------------------------------------------------------
 
         getSalaireAnnuel(){
             return (this.#salaire*12);
         }
-
-        
 
     }
