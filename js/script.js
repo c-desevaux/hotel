@@ -1,11 +1,11 @@
     "use strict";
 
     import { Chambre } from "./Chambre.js";                     //Import de la classe chambre
+    import { Employe } from "./Employe.js";                      //Import de la classe employe
 
+//-------------------------------------------------------------LES TESTS ----------------------------------------------------------------
 
-//-------------------------------------------------------------LES TESTS----------------------------------------------------------------
-
-    try{
+    try{                                                       //tests de la class chambre
 
         // let test1 = new Chambre();
         // let test2 = new Chambre("a", 1, true);
@@ -39,6 +39,16 @@ let hotel = [];
         hotel[i]= new Chambre(superficie, capacitee, resa);     //on stock les chambres dans un tableau hotel
 
     }
+
+    let paul = new Employe ("Durand", "Paul", "Housekeeping", 2800);
+    let pierre = new Employe ("Dupont", "Pierre", "Housekeeping", 1800, paul);
+    
+    console.log("Le chef de Pierre est "+paul.getPrenom()+" "+paul.getNom()+", Pierre gagne "+pierre.getSalaire());
+
+
+
+
+    //----------------------------------------------------------------GESTION DES BOUTONS-----------------------------------------------
 
     let btnOk = document.getElementById("btn-valider");               //On récupère le bouton dans le DOM
 
